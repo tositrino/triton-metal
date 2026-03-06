@@ -1,0 +1,5 @@
+operation: barrier
+iterations: 100
+threads: 256
+blocks: 16
+time_ms: 149.50726146412637

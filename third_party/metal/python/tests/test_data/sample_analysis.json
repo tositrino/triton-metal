@@ -1,0 +1,155 @@
+{
+  "results": [
+    {
+      "type": "tt.reduce",
+      "input_shapes": [
+        [
+          1024
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": 0,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      }
+    },
+    {
+      "type": "tt.sum",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": 1,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      }
+    },
+    {
+      "type": "tt.mean",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": [
+        0,
+        1
+      ],
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": true,
+        "vector_width": 4
+      }
+    },
+    {
+      "type": "tt.argmax",
+      "input_shapes": [
+        [
+          128,
+          256
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": 1,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      }
+    },
+    {
+      "type": "tt.matmul",
+      "input_shapes": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "is_reduction": false,
+      "memory_layout": "DEFAULT",
+      "memory_layout_value": 0
+    },
+    {
+      "type": "tt.add",
+      "input_shapes": [
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "is_reduction": false,
+      "memory_layout": "DEFAULT",
+      "memory_layout_value": 0
+    },
+    {
+      "type": "tt.conv2d",
+      "input_shapes": [
+        [
+          1,
+          32,
+          64,
+          64
+        ],
+        [
+          64,
+          32,
+          3,
+          3
+        ]
+      ],
+      "is_reduction": false,
+      "memory_layout": "DEFAULT",
+      "memory_layout_value": 0
+    },
+    {
+      "type": "tt.max",
+      "input_shapes": [
+        [
+          16,
+          32,
+          64
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": 2,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      }
+    }
+  ]
+}

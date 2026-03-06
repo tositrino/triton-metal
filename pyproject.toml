@@ -1,0 +1,115 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "pybind11",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triton-metal"
+version = "3.3.0rc2"
+description = "Enhanced Triton with Metal backend for Apple Silicon GPUs"
+readme = "README.md"
+authors = [
+    {name = "Cheng Xingqiang", email = "chenxingqiang@turingai.cc"}
+]
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+]
+keywords = ["deep learning", "compiler", "metal", "apple silicon", "m3", "gpu", "mlx"]
+requires-python = ">=3.9,<3.14"
+dependencies = [
+    "setuptools>=40.8.0",
+    "importlib-metadata; python_version < '3.10'",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/chenxingqiang/triton-metal"
+"Bug Tracker" = "https://github.com/chenxingqiang/triton-metal/issues"
+"Documentation" = "https://chenxingqiang.github.io/triton-metal/"
+"Source Code" = "https://github.com/chenxingqiang/triton-metal"
+
+[project.optional-dependencies]
+build = [
+    "cmake>=3.20",
+    "lit",
+]
+tests = [
+    "autopep8",
+    "isort",
+    "numpy",
+    "pytest",
+    "pytest-forked",
+    "pytest-xdist",
+    "scipy>=1.7.1",
+    "llnl-hatchet",
+]
+tutorials = [
+    "matplotlib",
+    "pandas",
+    "tabulate",
+]
+metal = [
+    "mlx>=0.3.0",
+]
+
+[tool.setuptools]
+packages = ["triton"]
+package-dir = {"" = "python"}
+
+# Remove dynamic version configuration and rely on the static version
+# [tool.setuptools.dynamic]
+# version = {attr = "get_version()"}
+
+[project.entry-points."triton.backends"]
+nvidia = "triton.backends.nvidia"
+amd = "triton.backends.amd"  
+metal = "triton.backends.metal"
+
+[project.scripts]
+proton-viewer = "triton.profiler.viewer:main"
+proton = "triton.profiler.proton:main"
+
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR/python"
+files = [
+    "python/triton/knobs.py",
+    "python/triton/runtime/build.py",
+    "python/triton/_utils.py",
+    "python/test/unit/test_knobs.py",
+    "python/test/unit/runtime/test_compilation_listener.py",
+]
+exclude = ["/build/"]
+follow_imports = "silent"
+
+[tool.yapf]
+based_on_style = "pep8"
+column_limit = 120
+disable_split_list_with_comment = true
+each_dict_entry_on_separate_line=false
+split_before_named_assigns = false
+split_complex_comprehension = true
+
+# We're incrementally switching from autopep8 to ruff.
+[tool.autopep8]
+aggressive = 1
+ignore = "E501,E701,E731,W690,W503"
+max_line_length = 88
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["E501", "E701", "E731", "E741"]

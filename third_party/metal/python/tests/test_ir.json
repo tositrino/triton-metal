@@ -1,0 +1,59 @@
+[
+  {
+    "id": "a",
+    "type": "tt.load",
+    "ptr": "ptr_a",
+    "shape": [
+      128,
+      64
+    ]
+  },
+  {
+    "id": "b",
+    "type": "tt.load",
+    "ptr": "ptr_b",
+    "shape": [
+      64,
+      128
+    ]
+  },
+  {
+    "id": "barrier_1",
+    "type": "tt.debug_barrier"
+  },
+  {
+    "id": "matmul",
+    "type": "tt.dot",
+    "a_id": "a",
+    "b_id": "b"
+  },
+  {
+    "id": "c",
+    "type": "tt.load",
+    "ptr": "ptr_c",
+    "shape": [
+      128,
+      128
+    ]
+  },
+  {
+    "id": "barrier_2",
+    "type": "tt.debug_barrier"
+  },
+  {
+    "id": "barrier_3",
+    "type": "tt.debug_barrier"
+  },
+  {
+    "id": "add",
+    "type": "tt.binary.add",
+    "lhs_id": "matmul",
+    "rhs_id": "c"
+  },
+  {
+    "id": "result",
+    "type": "tt.store",
+    "ptr": "ptr_result",
+    "value_id": "add"
+  }
+]

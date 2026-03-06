@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "type": "tt.mean",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128
+        ]
+      ],
+      "is_reduction": true,
+      "memory_layout": "COALESCED",
+      "memory_layout_value": 8,
+      "axis": [
+        0,
+        1
+      ],
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": true,
+        "vector_width": 4
+      }
+    }
+  ]
+}

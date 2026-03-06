@@ -1,0 +1,87 @@
+Hardware: {'chip_generation': 'M3_MAX', 'metal_feature_set': 'METAL_3_1', 'simd_width': 32, 'supports_fast_atomics': True}
+
+barrier:
+  operation: barrier
+  iterations: 100
+  threads: 256
+  blocks: 16
+  time_ms: 149.50726146412637
+
+atomic_add:
+  operation: atomic_add
+  iterations: 1000
+  threads: 1024
+  time_ms: 101.18087902546861
+
+atomic_max:
+  operation: atomic_max
+  iterations: 1000
+  threads: 1024
+  time_ms: 75.06292560471967
+
+atomic_min:
+  operation: atomic_min
+  iterations: 1000
+  threads: 1024
+  time_ms: 107.21961337511887
+
+atomic_xchg:
+  operation: atomic_xchg
+  iterations: 1000
+  threads: 1024
+  time_ms: 136.44375612075157
+
+reduction_shared_memory_1024:
+  operation: reduction_shared_memory
+  input_size: 1024
+  iterations: 5
+  time_ms: 5.543361058762515
+
+reduction_shared_memory_10240:
+  operation: reduction_shared_memory
+  input_size: 10240
+  iterations: 5
+  time_ms: 77.49881051080293
+
+reduction_shared_memory_102400:
+  operation: reduction_shared_memory
+  input_size: 102400
+  iterations: 5
+  time_ms: 1402.9964588433377
+
+reduction_direct_atomic_1024:
+  operation: reduction_direct_atomic
+  input_size: 1024
+  iterations: 5
+  time_ms: 7.817200652650463
+
+reduction_direct_atomic_10240:
+  operation: reduction_direct_atomic
+  input_size: 10240
+  iterations: 5
+  time_ms: 102.51137237425985
+
+reduction_direct_atomic_102400:
+  operation: reduction_direct_atomic
+  input_size: 102400
+  iterations: 5
+  time_ms: 261.8746036297646
+
+reduction_hierarchical_1024:
+  operation: reduction_hierarchical
+  input_size: 1024
+  iterations: 5
+  time_ms: 12.505366594426127
+
+reduction_hierarchical_10240:
+  operation: reduction_hierarchical
+  input_size: 10240
+  iterations: 5
+  time_ms: 80.75459456049398
+
+reduction_hierarchical_102400:
+  operation: reduction_hierarchical
+  input_size: 102400
+  iterations: 5
+  time_ms: 591.4343114062533
+

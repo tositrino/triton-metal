@@ -1,0 +1,4 @@
+operation: atomic_xchg
+iterations: 1000
+threads: 1024
+time_ms: 136.44375612075157

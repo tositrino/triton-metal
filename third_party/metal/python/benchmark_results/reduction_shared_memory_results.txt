@@ -1,0 +1,4 @@
+operation: reduction_shared_memory
+input_size: 102400
+iterations: 5
+time_ms: 1402.9964588433377

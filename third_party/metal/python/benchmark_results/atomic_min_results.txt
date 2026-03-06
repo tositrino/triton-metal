@@ -1,0 +1,4 @@
+operation: atomic_min
+iterations: 1000
+threads: 1024
+time_ms: 107.21961337511887

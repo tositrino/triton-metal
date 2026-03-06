@@ -1,0 +1,4 @@
+operation: atomic_add
+iterations: 1000
+threads: 1024
+time_ms: 101.18087902546861

@@ -1,0 +1,322 @@
+{
+  "results": [
+    {
+      "id": "sum_reduce_1d",
+      "type": "tt.reduce",
+      "input_shapes": [
+        [
+          1024
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "sum_reduce_2d",
+      "type": "tt.sum",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "mean_reduce_3d",
+      "type": "tt.mean",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": true,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "argmax_reduce",
+      "type": "tt.argmax",
+      "input_shapes": [
+        [
+          128,
+          256
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "matmul_op",
+      "type": "tt.matmul",
+      "input_shapes": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 4,
+      "layout_name": "TILED"
+    },
+    {
+      "id": "elementwise_add",
+      "type": "tt.add",
+      "input_shapes": [
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    },
+    {
+      "id": "conv2d_op",
+      "type": "tt.conv2d",
+      "input_shapes": [
+        [
+          1,
+          32,
+          64,
+          64
+        ],
+        [
+          64,
+          32,
+          3,
+          3
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    },
+    {
+      "id": "max_reduce_3d",
+      "type": "tt.max",
+      "input_shapes": [
+        [
+          16,
+          32,
+          64
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "large_sum_1d",
+      "type": "tt.sum",
+      "input_shapes": [
+        [
+          1048576
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": true,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "large_reduce_2d_axis0",
+      "type": "tt.reduce",
+      "input_shapes": [
+        [
+          1024,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "min_reduce_2d",
+      "type": "tt.min",
+      "input_shapes": [
+        [
+          256,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "mean_reduce_multiple_axes",
+      "type": "tt.mean",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128,
+          256
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": true,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "any_reduce",
+      "type": "tt.any",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "all_reduce",
+      "type": "tt.all",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": true,
+      "optimizations": {
+        "use_hierarchical_reduction": true,
+        "use_simdgroup_reduction": true,
+        "two_stage_reduction": false,
+        "vector_width": 4
+      },
+      "layout": 8,
+      "layout_name": "COALESCED"
+    },
+    {
+      "id": "relu_op",
+      "type": "tt.relu",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    },
+    {
+      "id": "sigmoid_op",
+      "type": "tt.sigmoid",
+      "input_shapes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    },
+    {
+      "id": "softmax_op",
+      "type": "tt.softmax",
+      "input_shapes": [
+        [
+          128,
+          1024
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    },
+    {
+      "id": "tanh_op",
+      "type": "tt.tanh",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "is_reduction": false,
+      "layout": 0,
+      "layout_name": "DEFAULT"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+operation: atomic_max
+iterations: 1000
+threads: 1024
+time_ms: 75.06292560471967

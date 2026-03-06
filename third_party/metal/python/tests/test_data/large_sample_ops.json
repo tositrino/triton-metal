@@ -1,0 +1,244 @@
+{
+  "ops": [
+    {
+      "type": "tt.reduce",
+      "id": "sum_reduce_1d",
+      "input_shapes": [
+        [
+          1024
+        ]
+      ],
+      "args": {
+        "axis": 0
+      }
+    },
+    {
+      "type": "tt.sum",
+      "id": "sum_reduce_2d",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.mean",
+      "id": "mean_reduce_3d",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128
+        ]
+      ],
+      "args": {
+        "axis": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "type": "tt.argmax",
+      "id": "argmax_reduce",
+      "input_shapes": [
+        [
+          128,
+          256
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.matmul",
+      "id": "matmul_op",
+      "input_shapes": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ]
+    },
+    {
+      "type": "tt.add",
+      "id": "elementwise_add",
+      "input_shapes": [
+        [
+          128,
+          128
+        ],
+        [
+          128,
+          128
+        ]
+      ]
+    },
+    {
+      "type": "tt.conv2d",
+      "id": "conv2d_op",
+      "input_shapes": [
+        [
+          1,
+          32,
+          64,
+          64
+        ],
+        [
+          64,
+          32,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "type": "tt.max",
+      "id": "max_reduce_3d",
+      "input_shapes": [
+        [
+          16,
+          32,
+          64
+        ]
+      ],
+      "args": {
+        "axis": 2
+      }
+    },
+    {
+      "type": "tt.sum",
+      "id": "large_sum_1d",
+      "input_shapes": [
+        [
+          1048576
+        ]
+      ],
+      "args": {
+        "axis": 0
+      }
+    },
+    {
+      "type": "tt.reduce",
+      "id": "large_reduce_2d_axis0",
+      "input_shapes": [
+        [
+          1024,
+          512
+        ]
+      ],
+      "args": {
+        "axis": 0
+      }
+    },
+    {
+      "type": "tt.min",
+      "id": "min_reduce_2d",
+      "input_shapes": [
+        [
+          256,
+          512
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.mean",
+      "id": "mean_reduce_multiple_axes",
+      "input_shapes": [
+        [
+          32,
+          64,
+          128,
+          256
+        ]
+      ],
+      "args": {
+        "axis": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "type": "tt.any",
+      "id": "any_reduce",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.all",
+      "id": "all_reduce",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.relu",
+      "id": "relu_op",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ]
+    },
+    {
+      "type": "tt.sigmoid",
+      "id": "sigmoid_op",
+      "input_shapes": [
+        [
+          256,
+          256
+        ]
+      ]
+    },
+    {
+      "type": "tt.softmax",
+      "id": "softmax_op",
+      "input_shapes": [
+        [
+          128,
+          1024
+        ]
+      ],
+      "args": {
+        "axis": 1
+      }
+    },
+    {
+      "type": "tt.tanh",
+      "id": "tanh_op",
+      "input_shapes": [
+        [
+          512,
+          512
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+setuptools>=40.8.0
+
+[:python_version < "3.10"]
+importlib-metadata
+
+[build]
+cmake>=3.20
+lit
+
+[metal]
+mlx>=0.3.0
+
+[tests]
+autopep8
+isort
+numpy
+pytest
+pytest-forked
+pytest-xdist
+scipy>=1.7.1
+llnl-hatchet
+
+[tutorials]
+matplotlib
+pandas
+tabulate
