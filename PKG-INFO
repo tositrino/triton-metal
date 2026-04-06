@@ -1,15 +1,15 @@
 Metadata-Version: 2.4
 Name: triton-metal
-Version: 3.3.0rc2
+Version: 3.3.0rc3
 Summary: Enhanced Triton with Metal backend for Apple Silicon GPUs
 Home-page: https://github.com/chenxingqiang/triton-metal/
 Author: Cheng Xingqiang
-Author-email: Cheng Xingqiang <chenxingqiang@turingai.cc>
+Author-email: Cheng Xingqiang <chenxingqiang@turingai.cc>, ths <development@ths.one>
 License-Expression: MIT
-Project-URL: Homepage, https://github.com/chenxingqiang/triton-metal
-Project-URL: Bug Tracker, https://github.com/chenxingqiang/triton-metal/issues
-Project-URL: Documentation, https://chenxingqiang.github.io/triton-metal/
-Project-URL: Source Code, https://github.com/chenxingqiang/triton-metal
+Project-URL: Homepage, https://github.com/tositrino/triton-metal
+Project-URL: Bug Tracker, https://github.com/tositrino/triton-metal/issues
+Project-URL: Documentation, https://ths.one/projects/triton-metal/
+Project-URL: Source Code, https://github.com/tositrino/triton-metal
 Keywords: deep learning,compiler,metal,apple silicon,m3,gpu,mlx
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
@@ -19,6 +19,7 @@ Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Classifier: Operating System :: MacOS :: MacOS X
 Classifier: Operating System :: POSIX :: Linux

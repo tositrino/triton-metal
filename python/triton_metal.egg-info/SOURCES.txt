@@ -5,6 +5,7 @@ MANIFEST.in
 Makefile
 README.md
 pyproject.toml
+setup.cfg
 setup.py
 bin/CMakeLists.txt
 bin/RegisterTritonDialects.h
