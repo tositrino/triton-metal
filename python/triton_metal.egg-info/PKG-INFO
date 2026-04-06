@@ -23,7 +23,7 @@ Classifier: Programming Language :: Python :: 3.14
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Classifier: Operating System :: MacOS :: MacOS X
 Classifier: Operating System :: POSIX :: Linux
-Requires-Python: >=3.9,<3.14
+Requires-Python: >=3.9,<3.15
 Description-Content-Type: text/markdown
 License-File: LICENSE
 License-File: LICENSE.metal
