@@ -12,7 +12,7 @@ version = "3.3.0rc3"
 description = "Enhanced Triton with Metal backend for Apple Silicon GPUs"
 readme = "README.md"
 authors = [
-    {name = "Cheng Xingqiang", email = "chenxingqiang@turingai.cc"}
+    {name = "Cheng Xingqiang", email = "chenxingqiang@turingai.cc"},
     {name = "ths", email = "development@ths.one"}
 ]
 license = "MIT"
