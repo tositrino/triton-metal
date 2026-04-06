@@ -8,11 +8,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "triton-metal"
-version = "3.3.0rc2"
+version = "3.3.0rc3"
 description = "Enhanced Triton with Metal backend for Apple Silicon GPUs"
 readme = "README.md"
 authors = [
     {name = "Cheng Xingqiang", email = "chenxingqiang@turingai.cc"}
+    {name = "ths", email = "development@ths.one"}
 ]
 license = "MIT"
 classifiers = [
@@ -24,22 +25,23 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: POSIX :: Linux",
 ]
 keywords = ["deep learning", "compiler", "metal", "apple silicon", "m3", "gpu", "mlx"]
-requires-python = ">=3.9,<3.14"
+requires-python = ">=3.9,<3.15"
 dependencies = [
     "setuptools>=40.8.0",
     "importlib-metadata; python_version < '3.10'",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/chenxingqiang/triton-metal"
-"Bug Tracker" = "https://github.com/chenxingqiang/triton-metal/issues"
-"Documentation" = "https://chenxingqiang.github.io/triton-metal/"
-"Source Code" = "https://github.com/chenxingqiang/triton-metal"
+"Homepage" = "https://github.com/tositrino/triton-metal"
+"Bug Tracker" = "https://github.com/tositrino/triton-metal/issues"
+"Documentation" = "https://ths.one/projects/triton-metal/"
+"Source Code" = "https://github.com/tositrino/triton-metal"
 
 [project.optional-dependencies]
 build = [
